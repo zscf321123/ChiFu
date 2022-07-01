@@ -1,0 +1,39 @@
+version: '3'
+services:
+  db:
+    container_name: 'postgres'
+    image: postgres
+    environment:
+      POSTGRES_DB: ChiFu
+      POSTGRES_USER: postgres 
+      POSTGRES_PASSWORD: 1qaz@WSX
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+    ports:
+      - "5442:5432"
+  dbGUI:
+    container_name: 'pgadmin'
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "zscf321123@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: 1qaz@WSX
+      POSTGRES_PASSWORD: 1qaz@WSX
+    volumes:
+      - pggui:/var/lib/pgadmin/
+    ports:
+      - "16543:80"
+    depends_on:
+      - db
+  web:
+    container_name: 'chi'
+    build: ./
+    image: chifu-controller:0.0.1
+    entrypoint: ["java","-jar","/chi.jar"]
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+volumes:
+  pgdata:
+  pggui:

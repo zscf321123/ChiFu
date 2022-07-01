@@ -1,0 +1,26 @@
+## 数据源配置 (DataSourceAutoConfiguration & DataSourceProperties)
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    #url: jdbc:postgresql://host.docker.internal:5432/ChiFu
+    url: jdbc:postgresql://db:5432/ChiFu
+    password: 1qaz@WSX
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    show-sql: 'true'
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+server:
+  servlet:
+    context-path: /chi
+  port: '8080'
+  ssl:
+      key-store: classpath:keystore.p12
+      key-store-password: 1qaz@WSX
+      keyStoreType: PKCS12
+      keyAlias: tomcat  
