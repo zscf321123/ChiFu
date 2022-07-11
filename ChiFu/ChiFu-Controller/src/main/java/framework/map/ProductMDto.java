@@ -1,10 +1,7 @@
 package framework.map;
 
-import java.util.List;
-
 import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,6 +15,7 @@ import lombok.ToString;
 @ToString
 public class ProductMDto {
 	private String productName;
+	private String productSubName;
 	private String spec;
 	private int comId;
 	private String companyName;

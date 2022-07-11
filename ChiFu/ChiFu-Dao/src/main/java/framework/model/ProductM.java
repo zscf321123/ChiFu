@@ -18,10 +18,11 @@ import lombok.Setter;
 @Getter
 @Table(name="product_m")
 public class ProductM {
-	
+
 	@EmbeddedId
 	private ProductMId id;
 	private String productName;
+	private String productSubName;
 	private int price;
 	private int specialPrice;
 	private String spec;

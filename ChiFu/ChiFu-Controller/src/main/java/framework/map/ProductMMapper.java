@@ -5,9 +5,6 @@ import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import framework.model.Festival;
-import framework.model.FestivalGod;
-import framework.model.Offering;
 import framework.model.ProductM;
 
 @Mapper
